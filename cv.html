@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Abdulrahman Alzahrani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0b3327;
+    --navy-deep: #051d15;
+    --ivory: #f3efe1;
+    --ink: #14261e;
+    --gold: #a9823c;
+    --gold-soft: #d9bb6f;
+    --line: rgba(20,38,30,0.14);
+  }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; min-height:100%; }
+  body{
+    background:
+      radial-gradient(circle at 20% 15%, rgba(201,162,39,0.08), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(201,162,39,0.06), transparent 40%),
+      var(--navy);
+    background-color: var(--navy);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    padding: 40px 20px 60px;
+  }
+  .sheet{
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--ivory);
+    border-radius: 20px;
+    padding: 44px 40px 40px;
+    box-shadow:
+      0 30px 60px -20px rgba(0,0,0,0.55),
+      0 2px 0 rgba(255,255,255,0.35) inset;
+    border: 1px solid rgba(169,130,60,0.25);
+  }
+  .topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .back{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+  }
+  .back:hover{ color: var(--gold); }
+  .print-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--ivory);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 9px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    transition: transform 0.16s ease, background 0.16s ease;
+  }
+  .print-btn:hover{ background: var(--navy-deep); transform: translateY(-1px); }
+  .print-btn svg{ width:15px; height:15px; }
+
+  header.cv-head{
+    text-align: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 26px;
+  }
+  .name{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 27px;
+    color: var(--ink);
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .title{
+    font-family: 'Space Mono', monospace;
+    font-size: 12.5px;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+  .contact{
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: rgba(27,35,55,0.62);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+  }
+  .contact a{ color: rgba(27,35,55,0.62); text-decoration: none; }
+  .contact a:hover{ color: var(--gold); }
+
+  section{ margin-bottom: 26px; }
+  section:last-child{ margin-bottom: 0; }
+
+  .sec-title{
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sec-title::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .summary{
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .skills-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .skill-item{
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .skill-item b{
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .entry{ margin-bottom: 18px; }
+  .entry:last-child{ margin-bottom: 0; }
+  .entry-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-bottom: 2px;
+  }
+  .entry-role{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .entry-date{
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: rgba(27,35,55,0.5);
+    white-space: nowrap;
+  }
+  .entry-org{
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .entry ul{
+    margin: 0;
+    padding-left: 18px;
+  }
+  .entry li{
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .entry li:last-child{ margin-bottom: 0; }
+
+  .edu-note{
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-top: 6px;
+  }
+
+  .cert-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cert-list li{
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.5;
+    padding-left: 16px;
+    position: relative;
+  }
+  .cert-list li::before{
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  @media print{
+    body{ background: #fff; padding: 0; }
+    .sheet{ box-shadow: none; border: none; border-radius: 0; padding: 0; max-width: 100%; }
+    .topbar{ display: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="topbar">
+      <a class="back" href="index.html">← Back</a>
+      <button class="print-btn" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print / Save as PDF
+      </button>
+    </div>
+
+    <header class="cv-head">
+      <h1 class="name">Abdulrahman Alzahrani</h1>
+      <div class="contact">
+        <span>Riyadh, Saudi Arabia</span>
+        <span>+966 50 849 8788</span>
+        <a href="mailto:abdulrahmanfin@outlook.com">abdulrahmanfin@outlook.com</a>
+        <a href="https://www.linkedin.com/in/abdulrahman-alzahrani-43713128b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="sec-title">Professional Summary</h2>
+      <p class="summary">
+        Certified FMVA® results-driven Treasury Officer with strong capabilities in financial and treasury analysis, trade finance, and payment operations within Saudi Arabia's corporate sectors. Proven expertise in end-to-end LC, LG, and BC processing in compliance with UCP 600 and SAMA regulations. Track record of systems innovation and analytical problem-solving, including designing custom internal tools to streamline workflows and evaluate credit risk.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="sec-title">Technical Skills &amp; Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-item"><b>Trade Finance:</b> Letters of Credit (LC), Letters of Guarantee (LG), Bills of Collection (BC), UCP 600 &amp; International Trade Finance</div>
+        <div class="skill-item"><b>ERP &amp; Automation:</b> Microsoft Dynamics 365 ERP (Treasury &amp; Finance), SAP ERP, MS Power Apps, Power Automate, Advanced Excel (VBA)</div>
+        <div class="skill-item"><b>Treasury Operations:</b> Cash Positioning, Payment Execution, Bank Account Management, Bank Reconciliations</div>
+        <div class="skill-item"><b>Analysis &amp; Compliance:</b> Financial Analysis, Customer Credit Analysis Report (CR), Credit Risk Assessment (Z-Score), SAMA Regulatory Framework, Incoterms 2020</div>
+        <div class="skill-item"><b>Languages:</b> Arabic (Native), English (Professional)</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">Professional Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-role">Treasury Officer</span>
+          <span class="entry-date">Jan 2026 – Present</span>
+        </div>
+        <div class="entry-org">Tabuk Pharmaceuticals Manufacturing Company (TPMC) — Riyadh, Saudi Arabia</div>
+        <ul>
+          <li><b>Systems Innovation:</b> Developed custom internal systems for LC Applications and Inward Bills for Collection (BC).</li>
+          <li><b>Trade Finance:</b> Manage full lifecycle of Import/Export LCs and LGs, ensuring compliance with international trade standards.</li>
+          <li><b>Risk Management:</b> Conduct credit rating (CR) evaluations and risk assessments for customers to safeguard liquidity.</li>
+          <li><b>Logistics Coordination:</b> Oversee Inward BCs, coordinating shipping documents between banks and logistics to prevent supply chain bottlenecks.</li>
+          <li><b>Operations:</b> Execute corporate fund transfers via digital banking platforms with zero-error accuracy.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-role">Treasury Intern</span>
+          <span class="entry-date">Mar 2025 – Jun 2025</span>
+        </div>
+        <div class="entry-org">Jahez International Company — Riyadh, Saudi Arabia</div>
+        <ul>
+          <li>Executed daily bank reconciliations for high-volume accounts using Microsoft Dynamics 365.</li>
+          <li>Processed and tracked outgoing payment instructions, resolving discrepancies with banking partners.</li>
+          <li>Prepared bank confirmation letters and evidence packages for quarterly external audits.</li>
+          <li>Recorded journal entries and monitored real-time bank balances to support internal financial controls.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-role">Bachelor of Finance and Banking</span>
+          <span class="entry-date">Graduated Jun 2025</span>
+        </div>
+        <div class="entry-org">Imam Mohammad Ibn Saud Islamic University — Riyadh, Saudi Arabia</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">Volunteering &amp; Leadership</h2>
+      <ul style="margin:0; padding-left:18px;">
+        <li style="font-size:13.5px; line-height:1.55; color:var(--ink); margin-bottom:4px;">Served as a Student Leader for the Finance and Ejad clubs, and an active member in multiple university initiatives.</li>
+        <li style="font-size:13.5px; line-height:1.55; color:var(--ink);">Accumulated 1,030 officially recognized volunteer hours in community service and event coordination.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="sec-title">Certifications &amp; Development</h2>
+      <ul class="cert-list">
+        <li>FMVA® (Financial Modeling &amp; Valuation Analyst) — Corporate Finance Institute (CFI)</li>
+        <li>Financial Analysis &amp; Technical Analysis — Moaamah</li>
+        <li>Investment Portfolios in the Financial Market — The Financial Academy</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
